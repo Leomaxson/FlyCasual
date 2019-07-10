@@ -64,7 +64,12 @@ namespace BoardTools
             LoadSceneFromResources("TableClassic");
 
             Texture playmatTexture = (Texture)Resources.Load("Playmats/Playmat" + Options.Playmat + "Texture", typeof(Texture));
-            GameObject.Find("SceneHolder/TableClassic/Playmat").GetComponent<Renderer>().material.mainTexture = playmatTexture;
+            Material playmatMaterial = GameObject.Find("SceneHolder/TableClassic/Playmat").GetComponent<Renderer>().material;
+            playmatMaterial.mainTexture = playmatTexture;
+
+            // Planning Room test
+            playmatMaterial.SetFloat("_Mode", 2f);
+            playmatMaterial.color = new Color(1, 1, 1, 200f / 255f);
 
             RenderSettings.fog = false;
         }
