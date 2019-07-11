@@ -259,7 +259,7 @@ namespace Ship
 
         public float GetShipBaseDistance()
         {
-            float result = BoardTools.Board.GetBoard().TransformVector(new Vector3(SHIPSTAND_SIZE_CM, 0, 0)).x;
+            float result = BoardTools.Board.BoardIntoWorld(new Vector3(SHIPSTAND_SIZE_CM, 0, 0)).x;
             return result;
         }
     }
