@@ -151,7 +151,7 @@ namespace BoardTools
 
         public static Vector3 WorldIntoBoard(Vector3 position)
         {
-            return BoardTransform.InverseTransformPoint(position) * 0.1093613f;
+            return BoardTransform.InverseTransformPoint(position);
         }
 
         //GET TRANSFORMS
@@ -236,7 +236,7 @@ namespace BoardTools
             Vector3 boardPointA = WorldIntoBoard(pointA);
             Vector3 boardPointB = WorldIntoBoard(pointB);
 
-            result = Mathf.CeilToInt(Vector3.Distance(boardPointA, boardPointB) / RANGE_1);
+            result = Mathf.CeilToInt(Vector3.Distance(boardPointA, boardPointB));
 
             return result;
         }
