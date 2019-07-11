@@ -146,12 +146,12 @@ namespace BoardTools
 
         public static Vector3 BoardIntoWorld(Vector3 position)
         {
-            return BoardTransform.TransformPoint(position);
+            return BoardTransform.TransformPoint(position) / 10;
         }
 
         public static Vector3 WorldIntoBoard(Vector3 position)
         {
-            return BoardTransform.InverseTransformPoint(position);
+            return BoardTransform.InverseTransformPoint(position) * 10;
         }
 
         //GET TRANSFORMS
